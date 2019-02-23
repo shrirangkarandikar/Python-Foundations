@@ -8,6 +8,6 @@ def printProps(props, name, var):
     Returns: 
         None
     """   
-    ## todo: calculate the max length of each field and format accordingly
+    w = len(max([p.__name__ for p in props], key=len))
     for p in props:
-        print("{:>4} of {} is {}".format(p.__name__, name, p(var))) 
+        print("{:>{width}} of {} is {}". format(p.__name__, name, p(var), width=w))
